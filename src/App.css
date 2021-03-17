@@ -34,6 +34,7 @@
   /* Общие изменения */
     
   header {
+    z-index: 999;
     padding: 12px;
     position: sticky;
     top: 0;
@@ -103,10 +104,16 @@
     flex-direction: column;
   }
   
+  footer section+section {
+    margin-left: 60px;
+  }
+
   footer a {
     color: var(--footer-text);
     text-decoration: none;
     transition: color 0.3s;
+    margin-bottom: 10px;
+    white-space: nowrap;
   }
   
   /* footer .active::after {
@@ -136,9 +143,7 @@
   }
   
   .box {
-    height: 380px;
-    width: 900px;
-    padding: 24px;
+    padding: 10px 60px 50px 60px;
     margin-bottom: 40px;
     /* border: 1px solid var(--text); */
     border-radius: 6px;
@@ -147,6 +152,7 @@
   
   h2 {
     position: absolute;
+    color: var(--text-hovered);
     text-transform: uppercase;
   }
   
@@ -157,6 +163,14 @@
     justify-content: space-around;
   }
   
+  @media (max-width: 600px) {
+    .games {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
+
   .games-column {
     display: flex;
     flex-direction: column;
