@@ -1,0 +1,7 @@
+[
+  {"id": 892970, "name": "Valheim", "is_free": false, "required_age": 0, "developers": ["Iron Gate AB"], "img": "https://cdn.akamai.steamstatic.com/steam/apps/892970/header.jpg?t=1615295984"},
+  {"id": 578080, "name": "PLAYERUNKNOWN'S BATTLEGROUNDS", "is_free": false, "required_age": 0, "developers": ["KRAFTON, Inc."], "img": "https://cdn.akamai.steamstatic.com/steam/apps/578080/header.jpg?t=1608093288"},
+  {"id": 271590, "name": "Grand Theft Auto V", "is_free": false, "required_age": "17", "developers": ["Rockstar North"], "img": "https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg?t=1592866696"},
+  {"id": 1282730, "name": "Loop Hero", "is_free": false, "required_age": 0, "developers": ["Four Quarters"], "img": "https://cdn.akamai.steamstatic.com/steam/apps/1282730/header_alt_assets_0.jpg?t=1615942236"},
+  {"id": 1293830, "name": "Forza Horizon 4", "is_free": false, "required_age": 0, "developers": ["Playground Games"], "img": "https://cdn.akamai.steamstatic.com/steam/apps/1293830/header.jpg?t=1615337540"}
+]

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Gamedetails from "../Json/gamedetail.json";
 
 function Allgames() {
 
@@ -7,30 +8,32 @@ function Allgames() {
   // },[]);
 
   // const fetchItems = async () => {
-  //   const data = await fetch(
-  //     "../Json/gamedetail.json"
-  //   );
-  //   const items = await data.json();
-  //   console.log(data);
+  //   const data = await fetch("../Json/gamedetails.json",{
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json'
+  //     }
+  //   });
+
+  //   // const items = await data.json();
+  //   const items = await data.text();
+  //   console.log(items);
   // }
 
-  // fetch('')
-  // .then(response => response.json())
-  // .then(json => console.log(json))
+  // fetch("../Json/gamedetail.json", )
+  //   .then(
+  //     function (response) {
+  //       response.json().then(function (tasks) {
+  //         console.log(tasks);
+  //       });
+  //     }
+  //   )
 
-  fetch("https://jsonplaceholder.typicode.com/todos/1")
-    .then(
-      function (response) {
-        response.json().then(function (tasks) {
-          console.log(tasks);
-        });
-      }
-    )
-
-  // fetch('../Json/gamedetail.json')
-  // .then((response) => {
-  //   return response.json();
-  // })
+  // Пример с MDN
+  // fetch('../Json/gamedetails.json')
+  // // .then((response) => {
+  // //   return response.json();
+  // // })
   // .then((data) => {
   //   console.log(data);
   // });
@@ -38,15 +41,19 @@ function Allgames() {
   return (
     <main>
       <section className="games-column">
-        <div className="game">			</div>
-        <div className="game">			</div>
-        <div className="game">			</div>
-        <div className="game">			</div>
-        <div className="game">			</div>
-        <div className="game">			</div>
-        <div className="game">			</div>
-        <div className="game">			</div>
-        <div className="game">			</div>
+        {Gamedetails.map(item => (
+          <div style={{ backgroundImage: `url(${item.img})` }} className="game" key={item.id}>
+            <div className="blur">
+              <span className="image">
+                <img src={item.img} />
+              </span>
+              <span>
+                <h4>{item.name}</h4>
+                <h5>{item.developers}</h5>
+              </span>
+            </div>
+          </div>
+        ))}
       </section>
       <section>
       </section>
