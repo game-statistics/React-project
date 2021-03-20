@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -8,8 +8,8 @@ function Footer() {
         <p>Этот сайт был разработан как курсовой проект в 2021 году</p>
       </section>
       <section>
-        <Link to="/">Home page</Link>
-        <Link to="/Games">All games</Link>
+        <Link to='/'>Home page</Link>
+        <Link to='/games'>All games</Link>
       </section>
     </footer>
   );

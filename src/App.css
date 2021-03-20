@@ -1,28 +1,33 @@
 /* Переменные */
 
 :root {
-  --bg: #ffffff;
-  --text: #17181f;
-  --shadow: #17182098; /* более прозрачная копия текста */
-  --text-hovered: #007bff;
-  --footer: #17181f;
-  --footer-text: #ffffff;
-
+  --shadow: #17182098;
+  --hovered: #00a2ff;
+  --dark: #17181f;
   --white: #fff;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
+  --gray: #acacac;
+  /* --success: #28a745; */
+  /* --info: #17a2b8; */
+  /* --warning: #ffc107; */
+  /* --danger: #dc3545; */
 }
 
 /* Общие изменения */
 
-header {
-  z-index: 999;
-  padding: 12px;
-  position: sticky;
-  top: 0;
-  background-color: var(--footer);
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+a {
+  color: var(--dark);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--hovered);
+  transition: color 0.3s;
 }
 
 nav {
@@ -33,9 +38,21 @@ nav {
   margin: 0 60px;
 }
 
-header .active {
-  border-bottom: 2px solid var(--text-hovered);
+header {
+  z-index: 999;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+  background-color: var(--dark);
 }
+
+header a {
+  color: var(--white);
+}
+
+/* header .active {
+  border-bottom: 2px solid var(--hovered);
+} */
 
 nav > span + span {
   margin-left: 2em;
@@ -46,39 +63,28 @@ nav > span + span {
 }
 
 /* #search, #allgames > div {
-    width: 40px;
-    height: 40px;
-  } */
+  width: 40px;
+  height: 40px;
+} */
 
 .icons {
   max-width: 30px;
   max-height: 30px;
-  fill: var(--bg);
+  fill: var(--white);
   transition: fill 0.3s;
 }
 
 .icons:hover {
-  fill: var(--text-hovered);
+  fill: var(--hovered);
   transition: fill 0.3s;
-}
-
-a {
-  color: var(--bg);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: var(--text-hovered);
-  transition: color 0.3s;
 }
 
 footer {
   position: relative;
   display: flex;
   justify-content: space-around;
-  color: var(--footer-text);
-  background-color: var(--footer);
+  color: var(--white);
+  background-color: var(--dark);
   padding: 20px;
 }
 
@@ -93,7 +99,7 @@ footer section + section {
 }
 
 footer a {
-  color: var(--footer-text);
+  color: var(--white);
   text-decoration: none;
   transition: color 0.3s;
   margin-bottom: 10px;
@@ -101,16 +107,16 @@ footer a {
 }
 
 /* footer .active::after {
-    font-size: 0.8em;
-    padding-left: 5px;
-    content: "ты тут";
-    color: var(--text-hovered);
-  } */
+  font-size: 0.8em;
+  padding-left: 5px;
+  content: "ты тут";
+  color: var(hovered);
+} */
 
 /* Ползунок справа */
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--text);
+  background-color: var(--dark);
 }
 
 ::-webkit-scrollbar {
@@ -122,27 +128,98 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   padding-top: 56px;
 }
 
 .box {
   padding: 10px 60px 50px 60px;
   margin-bottom: 40px;
-  /* border: 1px solid var(--text); */
   border-radius: 6px;
   box-shadow: 0px 10px 10px -5px var(--shadow), 0px 5px 5px -5px var(--shadow);
 }
-
-h1 {
-  font-size: 3rem;
+@media (max-width: 1150px) {
+  .box {
+    padding: 10px 60px 50px 60px;
+  }
+}
+.box h2 {
+  position: absolute;
+  color: var(--hovered);
   text-transform: uppercase;
 }
 
-h2 {
-  position: absolute;
-  color: var(--text-hovered);
+.blur {
+  display: flex;
+  flex-direction: row;
+  background: #17181fb9;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+.game {
+  margin-bottom: 40px;
+  text-align: left;
+  max-width: 800px;
+
+  background: center no-repeat;
+  background-size: cover;
+  background-color: var(--dark);
+
+  border-radius: 6px;
+}
+.game .blur:hover {
+  background: #363846b9;
+  box-shadow: 0px 10px 10px -5px var(--shadow), 0px 5px 5px -5px var(--shadow);
+  transition: 0.3s;
+}
+.game div {
+  border-radius: 6px;
+}
+.game span + span {
+  margin-left: 20px;
+}
+
+/* -------------------------- GAME SMALL */
+.small img {
+  max-height: 60px;
+  border-radius: 6px;
+}
+.small h4 {
+  font-size: 0.9rem;
+  color: var(--white);
+  margin: 6px 0 6px 0;
+}
+.small h5 {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin: 6px 0 6px 0;
+}
+.small .blur {
+  padding: 8px 12px 8px 12px;
+}
+
+/* -------------------------- GAME BiG */
+.big img {
+  max-height: 100px;
+}
+.big h4 {
+  font-size: 0.9rem;
+  color: var(--white);
+  margin: 2px 0 2px 0;
+}
+.big h5 {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin: 2px 0 2px 0;
+}
+.big h6 {
+  font-size: 0.68rem;
+  color: var(--gray);
   text-transform: uppercase;
+  margin: 8px 0 2px 0;
+}
+.big .blur {
+  padding: 20px;
 }
 
 .games {
@@ -151,8 +228,7 @@ h2 {
   flex-direction: row;
   justify-content: space-around;
 }
-
-@media (max-width: 600px) {
+@media (max-width: 880px) {
   .games {
     display: flex;
     flex-direction: column;
@@ -165,53 +241,13 @@ h2 {
   flex-direction: column;
   justify-content: center;
 }
-
-.game {
-  margin-bottom: 40px;
-  text-align: left;
-  max-width: 800px;
-
-  background: center no-repeat;
-  background-size: cover;
-  background-color: var(--shadow);
-
-  border-radius: 6px;
+@media (min-width: 600px) {
+  .games-column + .games-column {
+    margin-left: 40px;
+  }
 }
 
-.game span + span {
-  margin-left: 20px;
+.p404 {
+  height: 100vh;
+  width: 100vw;
 }
-
-.game img {
-  max-height: 100px;
-  border-radius: 6px;
-}
-
-.game h4 {
-  color: var(--white);
-  margin: 6px 0 10px 0;
-}
-
-.game h5 {
-  color: #acacac;
-  margin: 0;
-}
-
-.blur {
-  display: flex;
-  flex-direction: row;
-
-  padding: 20px;
-  border-radius: 6px;
-
-  background: #17181fb9;
-  backdrop-filter: blur(8px);
-  transition: 0.4s;
-}
-
-.blur:hover {
-  background: #363846b9;
-  box-shadow: 0px 10px 10px -5px var(--shadow), 0px 5px 5px -5px var(--shadow);
-  transition: 0.4s;
-}
-
