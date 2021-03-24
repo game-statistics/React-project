@@ -74,13 +74,6 @@ function GameList(size) {
               <span>
                 <h4>{item.name}</h4>
                 <Developers developers={item.developers} />
-                {/* <h5>
-                  {item.developers.map((dev) =>
-                    <div key={dev}>
-                      {dev}
-                    </div>
-                  )}
-                </h5> */}
                 <IfBig whatSize={item} />
               </span>
             </div>
