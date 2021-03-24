@@ -18,6 +18,11 @@ h1 {
   font-size: 3rem;
   text-transform: uppercase;
 }
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
 
 a {
   color: var(--dark);
@@ -132,6 +137,10 @@ main {
 }
 
 .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
   padding: 10px 60px 50px 60px;
   margin-bottom: 40px;
   border-radius: 6px;
@@ -142,10 +151,21 @@ main {
     padding: 10px 60px 50px 60px;
   }
 }
+@media (max-width: 470px) {
+  .box {
+    padding: 10px 0px;
+  }
+}
 .box h2 {
-  position: absolute;
   color: var(--hovered);
-  text-transform: uppercase;
+}
+.header2 {
+  margin: 10px 0 20px 0;
+  align-self: flex-start;
+} @media (max-width: 470px) {
+  .header2 {
+    align-self: center;
+  }
 }
 
 .blur {
@@ -167,6 +187,7 @@ main {
 
   border-radius: 6px;
 }
+
 .game .blur:hover {
   background: #363846b9;
   box-shadow: 0px 10px 10px -5px var(--shadow), 0px 5px 5px -5px var(--shadow);
@@ -176,7 +197,16 @@ main {
   border-radius: 6px;
 }
 .game span + span {
-  margin-left: 20px;
+  margin: 0 0 0 20px;
+}
+
+@media (max-width: 470px) {
+  .small .game {
+    border-radius: 0px;
+  }
+  .small div {
+    border-radius: 0px;
+  }
 }
 
 /* -------------------------- GAME SMALL */
@@ -201,6 +231,11 @@ main {
 /* -------------------------- GAME BiG */
 .big img {
   max-height: 100px;
+  border-radius: 6px;
+}
+.big .image {
+  display: flex;
+  align-items: flex-start;
 }
 .big h4 {
   font-size: 0.9rem;
@@ -220,10 +255,22 @@ main {
 }
 .big .blur {
   padding: 20px;
+}@media (max-width: 500px) {
+  .big .blur {
+    display: flex;
+    flex-direction: column;
+  }
+  .big .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .big span + span{
+    margin: 20px 0 0 0;
+  }
 }
 
 .games {
-  margin-top: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

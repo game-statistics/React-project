@@ -7,7 +7,7 @@ function Home() {
       <section>
         <h1>Game Statistics</h1>
         <div className='box'>
-          <h2>HOT &#128293;</h2>
+          <span className='header2'><h2>hot &#128293;</h2></span>
           <section className='games'>
             <section className='games-column'>
               <GameList size={'small'} />
@@ -17,23 +17,18 @@ function Home() {
             </section>
           </section>
         </div>
-        {/* <div className='box'>
-          <h2>NEW</h2>
+
+        <div className='box'>
+          <span className='header2'><h2>new &#128511;</h2></span>
           <section className='games'>
             <section className='games-column'>
-              <div className='game'>Pic / Name game / 10/10 / </div>
-              <div className='game'>Pic / Name game / 10/10 / </div>
-              <div className='game'>Pic / Name game / 10/10 / </div>
-              <div className='game'>Pic / Name game / 10/10 / </div>
+              <GameList size={'small'} />
             </section>
             <section className='games-column'>
-              <div className='game'>Pic / Name game / 10/10 / </div>
-              <div className='game'>Pic / Name game / 10/10 / </div>
-              <div className='game'>Pic / Name game / 10/10 / </div>
-              <div className='game'>Pic / Name game / 10/10 / </div>
+              <GameList size={'small'} />
             </section>
           </section>
-        </div> */}
+        </div>
       </section>
     </main>
   );
