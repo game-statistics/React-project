@@ -3,14 +3,10 @@ import GameList from './Gamelist';
 
 function Allgames() {
 
-  // const size = {
-  //   name: 'big'
-  // };
-
   return (
     <main>
       <section className='games-column'>
-        <GameList size={'big'} />
+        <GameList/>
       </section>
       <section>
       </section>

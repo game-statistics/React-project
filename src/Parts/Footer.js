@@ -5,11 +5,11 @@ function Footer() {
   return (
     <footer>
       <section>
-        <p>Этот сайт был разработан как курсовой проект в 2021 году</p>
+        {/* <p>Этот сайт был разработан как курсовой проект в 2021 году</p> */}
       </section>
       <section>
-        <Link to='/'>Home page</Link>
-        <Link to='/games'>All games</Link>
+        <Link to='/' className="Montserrat">Home page</Link>
+        <Link to='/games' className="Montserrat">All games</Link>
       </section>
     </footer>
   );

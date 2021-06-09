@@ -14,9 +14,7 @@ function Header() {
           </Link>
         </span>
         <span id='allgames'>
-          <div>
-            <Link to='/games'>All games</Link>
-          </div>
+          <Link to='/games' className="Montserrat">All games</Link>
         </span>
       </nav>
     </header>

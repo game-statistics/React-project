@@ -4,7 +4,7 @@ function About() {
 
   return (
     <main>
-      <h1>Про сайт</h1>
+      <h1 className="Montserrat">Про сайт</h1>
       <p></p>
     </main>
   )

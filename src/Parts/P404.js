@@ -1,10 +1,11 @@
 import React from 'react';
+import LottieAnimation from './Lottie.js';
+import ducks from '../Animation/emptystate.json';
 
 function P404() {
   return (
     <main className='p404'>
-      <h1> 404 </h1>
-      <img src='https://downloadhdwallpapers.in/wp-content/uploads/2018/02/Trees.png' style={{maxWidth: '800px'}} alt='Чумба, что ты тут делаешь?'/>
+      <h1 className='Montserrat text404'> 404 </h1>
     </main>
   );
 }

@@ -6,7 +6,7 @@ import React from 'react';
 
 function GameName() {
   return (
-    <div className='block gameName'>Game Name</div>
+    <div className='block gameName Montserrat'>Game Name</div>
   )
 }
 
