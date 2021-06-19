@@ -1,5 +1,5 @@
 import React from 'react';
-import GameList from './Gamelist';
+import GameList from '../other/Gamelist.js';
 
 function Allgames() {
 

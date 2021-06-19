@@ -1,10 +1,11 @@
 import React from "react";
 import Lottie from "react-lottie";
 
-export default function LottieAnimation({ lotti, classname }) {
+export default function LottieAnimation({ lotti, classname, width, height }) {
   const defaultOptions = {
-    loop: true,
+    loop: false,
     autoplay: true,
+    controls: false,
     animationData: lotti,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
@@ -13,7 +14,7 @@ export default function LottieAnimation({ lotti, classname }) {
 
   return (
     <div className={classname}>
-      <Lottie options={defaultOptions}/>
+      <Lottie options={defaultOptions} height={height} width={width}/>
     </div>
   );
 };

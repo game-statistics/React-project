@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Gamedetails from '../Json/gametop.json';
+import Gamedetails from '../../Json/gamedetail.json';
 // import React, { useState, useEffect } from 'react';
 
 function GameList(props) {

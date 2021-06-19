@@ -1,74 +1,99 @@
 // Цвета
 $blue: #00a2ff;
+$blue02: #00a2ff1a;
+$blue01: #00a2ff41;
+
 $dark: #17181f;
-$dark05: #17181f1a;
+$dark02: #17181f1a;
+$dark01: #17181f15;
+
 $white: #fff;
 $gray: #acacac;
 $shadow: #17182098;
+
 // Значения
 $animation: 0.3s;
-$border-radius: 14px;
+$border-radius: 10px;
 $border-radius-img: 8px;
+$margin-down: 0 0 24px 0;
 
+/* Ползунок справа */
+::-webkit-scrollbar-thumb {
+  background-color: $dark;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Основные предустановки */
 html {
   font-family: "Arial Nova", "Arial", arial;
   background-color: $white;
   color: $dark;
   font-size: 1.04rem;
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 36px;
+    color: $dark;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    color: $blue;
+    margin: 0;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    transition: color $animation;
+
+    &:hover {
+      color: $blue;
+      transition: color $animation;
+    }
+  }
+}
+
+/* Заполнение минимум всего экрана */
+#root {
+  min-height: 100vh;
 }
 
 .Montserrat {
   font-family: "Montserrat", sans-serif;
 }
 
-h1 {
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 36px;
-  color: $dark;
-  
-}
-
-h2 {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 24px;
-  color: $blue;
-  margin: 0;
-}
-
-a {
-  color: $white;
-  text-decoration: none;
-  transition: color $animation;
-
-  &:hover {
-    color: $blue;
-    transition: color $animation;
-  }
-}
-
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 999;
   padding: 0 16px;
   height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
   position: sticky;
   top: 0;
-  background-color: $dark; 
+
+  background-color: $dark;
 
   a {
     color: $white;
   }
 
   nav {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    max-width: 800px;
+    width: 100%;
   }
 }
 
@@ -87,9 +112,15 @@ header {
   }
 }
 
+.p404 ~ footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 footer {
   height: 80px;
-  position: relative;
 
   display: flex;
   justify-content: space-around;
@@ -103,9 +134,6 @@ footer {
     display: flex;
     flex-direction: column;
   }
-  section + section {
-    // margin-left: 60px;
-  }
   a {
     color: $white;
     text-decoration: none;
@@ -113,16 +141,6 @@ footer {
     margin-bottom: 10px;
     white-space: nowrap;
   }
-}
-
-/* Ползунок справа */
-
-::-webkit-scrollbar-thumb {
-  background-color: $dark;
-}
-
-::-webkit-scrollbar {
-  width: 5px;
 }
 
 main {
@@ -134,32 +152,141 @@ main {
 }
 
 .homepage {
-  padding: 0 16px;
+  margin: 0 16px;
 
+  h2 {
+    margin: $margin-down;
+  }
   .boxes {
     display: flex;
     flex-direction: column;
   }
 }
 
-.box {
+.gamepage {
+  margin: 0 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
-  border-radius: $border-radius;
+  .highlights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  h2 {
-    margin: 20px 0;
+    .gameName {
+      margin: $margin-down;
+
+      color: $dark;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .imagelogo {
+      margin: $margin-down;
+      img {
+        border-radius: $border-radius;
+        max-width: 328px;
+      }
+    }
+
+    .metacritic {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+      width: 312px;
+      padding: 8px;
+      margin: $margin-down;
+
+      background-color: $dark;
+      border-radius: $border-radius;
+      .metascore {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #6c3;
+        color: $white;
+        font-size: 24px;
+        font-weight: 600;
+
+        border-radius: $border-radius;
+        height: 52px;
+        width: 52px;
+      }
+      #Metaicon {
+        height: 52px;
+        width: 52px;
+      }
+      #Metatext {
+        height: 52px;
+      }
+      .metalogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+
+      width: 312px;
+      padding: 8px;
+      margin: $margin-down;
+
+      background: center no-repeat;
+      background-size: cover;
+      background-color: $white;
+
+      border: 1px solid $dark01;
+      border-radius: $border-radius;
+
+      font-size: 14px;
+      text-align: left;
+      a {
+        color: $blue;
+      }
+
+      .row {
+        margin: 5px 0 5px 0;
+        display: flex;
+        flex-direction: row;
+        & + .row {
+          margin: 0px 0 5px 0;
+        }
+      }
+
+      .subtitle {
+        min-width: 100px;
+        margin: 0 10px 0 0;
+      }
+    }
   }
-  & + .box {
-    // margin: ;
-  }
-}
 
-.header2 {
-  margin: 10px 0 20px 0;
-  align-self: flex-start;
+  .description {
+    max-width: 600px;
+    padding: 8px;
+    margin: $margin-down;
+
+    background-color: $white;
+    border: 1px solid $dark01;
+    border-radius: $border-radius;
+
+    text-align: left;
+
+    h2:first-child {
+      text-align: center;
+    }
+  }
+  .bb_tag {
+    margin: 18px 0 8px 0;
+    background-image: none;
+    font-size: 24px;
+    text-transform: none;
+    letter-spacing: 0px;
+  }
 }
 
 .game {
@@ -175,12 +302,12 @@ main {
   background-size: cover;
   background-color: $white;
 
-  border: 1px solid $dark05;
+  border: 1px solid $blue01;
   border-radius: $border-radius;
 
   transition: background-color $animation;
   &:hover {
-    background-color: $dark05;
+    background-color: $blue02;
     transition: background-color $animation;
   }
   img {
@@ -207,50 +334,6 @@ main {
   }
 }
 
-.small {
-  // img {
-  //   max-height: 60px;
-  //   border-radius: $border-radius;
-  // }
-  // h4 {
-  //   font-size: 0.9rem;
-  //   color: $white;
-  //   margin: 6px 0 6px 0;
-  // }
-  // h5 {
-  //   font-size: 0.8rem;
-  //   color: $gray;
-  //   margin: 6px 0 6px 0;
-  // }
-}
-
-.big {
-  // img {
-  //   max-height: 100px;
-  //   border-radius: $border-radius;
-  // }
-  // .image {
-  //   display: flex;
-  //   align-items: flex-start;
-  // }
-  // h4 {
-  //   font-size: 0.9rem;
-  //   color: $white;
-  //   margin: 2px 0 2px 0;
-  // }
-  // h5 {
-  //   font-size: 0.8rem;
-  //   color: $gray;
-  //   margin: 2px 0 2px 0;
-  // }
-  // h6 {
-  //   font-size: 0.68rem;
-  //   color: $gray;
-  //   text-transform: uppercase;
-  //   margin: 8px 0 2px 0;
-  // }
-}
-
 .games {
   display: flex;
   flex-direction: row;
@@ -268,129 +351,11 @@ main {
   }
 }
 
-.p404 {
-  height: 90vh;
+// .p404 {
+//   min-height: 444px;
+// }
 
-  .text404 {
-    transform: rotate(+40deg);
-  }
-}
-
-.gameName {
-  color: $white;
-  font-size: 2rem;
-  font-weight: 600;
-}
-.ver {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.verrow {
-  align-self: stretch;
-  & + .verrow {
-    margin: 0 0 0 20px;
-  }
-}
-
-.block {
-  min-width: 352px;
-  padding: 16px;
-  margin: 20px 0;
-  color: $white;
-  background-color: $dark;
-  border-radius: $border-radius;
-}
-
-.imagelogo img {
-  max-width: 320px;
-  border-radius: $border-radius;
-}
-
-.details {
-  font-size: 12px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-
-  .row {
-    margin: 5px 0 5px 0;
-    display: flex;
-    flex-direction: row;
-    & + .row {
-      margin: 0px 0 5px 0;
-    }
-  }
-}
-
-.subtitle {
-  min-width: 100px;
-  margin: 0 10px 0 0;
-}
-.description {
-  padding: 0 200px;
-  text-align: left;
-
-  h2:first-child {
-    text-align: center;
-  }
-}
-.bb_tag {
-  margin: 18px 0 8px 0;
-  background-image: none;
-  font-size: 24px;
-  text-transform: none;
-  letter-spacing: 0px;
-}
-
-.marginRight {
-  margin: 0 5px 0 5px;
-}
-
-.metacritic {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.metascore {
-  background-color: #6c3;
-  color: $white;
-  font-size: 24px;
-  font-weight: 600;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: $border-radius;
-  height: 3rem;
-  width: 3rem;
-}
-
-#Metaicon {
-  height: 50px;
-  width: 50px;
-}
-#Metatext {
-  height: 40px;
-}
-
-@media (min-width: 696px) {
-  #root {
-    height: 100vh;
-    width: 100%;
-    max-width: 100%;
-  }
-  footer {
-    position: absolute;
-    bottom: 0px;
-
-    width: 100%;
-  }
-
+@media (min-width: 720px) {
   .homepage {
     padding: 0 16px;
 
@@ -404,88 +369,22 @@ main {
   }
 }
 
+@media (min-width: 1024px) {
+  //   .gamepage {
+  //     display: flex;
+  //     flex-direction: row;
 
-// @media (max-width: 1150px) {
-//   .box {
-//     padding: 10px 60px 50px 60px;
-//   }
-// }
+  //     .highlights {
+  //       display: flex;
+  //       flex-direction: column;
+  //       align-items: center;
 
-// @media (max-width: 880px) {
-//   .games {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-around;
-//   }
+  //       margin-right: 24px;
+  //     }
 
-//   .games-column + .games-column {
-//     margin: 0;
-//   }
-
-//   .ver {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//   }
-//   .verrow {
-//     align-self: center;
-//   }
-//   .verrow + .verrow {
-//     margin: 0;
-//   }
-//   .block {
-//     min-width: 320px;
-//     max-width: 360px;
-//     padding: 16px;
-//     margin: 0 0 20px 0;
-//     color: $white;
-//     background-color: $dark;
-//     border-radius: $border-radius;
-//   }
-//   .description {
-//     padding: 0 40px;
-//     text-align: left;
-//   }
-// }
-
-// @media (max-width: 800px) {
-//   h1 {
-//     font-size: 2rem;
-//   }
-// }
-
-// @media (max-width: 500px) {
-//   .big {
-//     .blur {
-//       display: flex;
-//       flex-direction: column;
-//     }
-//     .image {
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//     }
-//     span + span {
-//       margin: 20px 0 0 0;
-//     }
-//   }
-// }
-
-// @media (max-width: 470px) {
-//   .box {
-//     padding: 10px 0px;
-//   }
-
-//   .small {
-//     .game {
-//       border-radius: 0px;
-//     }
-//     div {
-//       border-radius: 0px;
-//     }
-//   }
-
-//   .header2 {
-//     align-self: center;
-//   }
-// }
+  //     .sticky {
+  //       position: sticky;
+  //       top: 116px;
+  //     }
+  //   }
+}
