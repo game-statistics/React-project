@@ -4,8 +4,14 @@ import ducks from "../Animation/duck.json";
 
 function P404() {
   return (
-    <main className='p404'> 
-      <LottieAnimation lotti={ducks} classname={'pageNotFound'} height={360} width={360} />
+    <main className="p404">
+      <LottieAnimation
+        lotti={ducks}
+        classname={"pageNotFound"}
+        height={360}
+        width={360}
+        loop={false}
+      />
     </main>
   );
 }

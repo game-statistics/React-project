@@ -13,8 +13,9 @@ function Header() {
             </svg>
           </Link>
         </span>
-        <span id='allgames'>
+        <span id='links'>
           <Link to='/games' className="Montserrat">All games</Link>
+          <Link to='/about' className="Montserrat">About</Link>
         </span>
       </nav>
     </header>

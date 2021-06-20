@@ -1,9 +1,9 @@
 import React from "react";
 import Lottie from "react-lottie";
 
-export default function LottieAnimation({ lotti, classname, width, height }) {
+export default function LottieAnimation({ lotti, classname, width, height, loop }) {
   const defaultOptions = {
-    loop: false,
+    loop: loop,
     autoplay: true,
     controls: false,
     animationData: lotti,
