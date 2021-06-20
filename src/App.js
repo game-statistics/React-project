@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.scss';
-import Header from './parts/other/Header.js';
-import Footer from './parts/other/Footer.js';
-import Home from './parts/homepage/Home.js';
-import PageAbout from './parts/PageAbout.js';
-import Allgames from './parts/allgamespage/Allgames.js';
-import Gamepage from './parts/gamepage/Gamepage.js';
-import PageNotFound from './parts/PageNotFound.js';
+import Header from './parts/other/Header';
+import Footer from './parts/other/Footer';
+import Home from './parts/homepage/Home';
+import PageAbout from './parts/PageAbout';
+import Allgames from './parts/allgamespage/Allgames';
+import Gamepage from './parts/gamepage/Gamepage';
+import PageNotFound from './parts/PageNotFound';
 import ScrollToTop from './parts/other/ScrolltoTop';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ function App() {
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/games' exact component={Allgames} />
-        <Route path='/PageAbout' exact component={PageAbout} />
+        <Route path='/about' exact component={PageAbout} />
         <Route path='/games/:id' exact component={Gamepage} />
         <Route path='/' component={PageNotFound} />
       </Switch>
