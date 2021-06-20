@@ -2,9 +2,9 @@ import React from "react";
 import LottieAnimation from "./other/Lottie.js";
 import ducks from "../Animation/duck.json";
 
-function P404() {
+function PageNotFound() {
   return (
-    <main className="p404">
+    <main className="PageNotFound">
       <LottieAnimation
         lotti={ducks}
         classname={"pageNotFound"}
@@ -16,4 +16,4 @@ function P404() {
   );
 }
 
-export default P404;
+export default PageNotFound;
