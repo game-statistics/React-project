@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.scss';
-import Header from './parts/other/Header';
-import Footer from './parts/other/Footer';
-import Home from './parts/homepage/Home';
-// import PageAbout from './parts/PageAbout';
-import Allgames from './parts/allgamespage/Allgames';
-import Gamepage from './parts/gamepage/Gamepage';
-// import PageNotFound from './parts/PageNotFound';
-import ScrollToTop from './parts/other/ScrolltoTop';
+import Header from '../src/parts/other/Header';
+import Footer from '../src/parts/other/Footer';
+import Home from '../src/parts/homepage/Home';
+// import PageAbout from '../src/parts/PageAbout';
+import Allgames from '../src/parts/allgamespage/Allgames';
+import Gamepage from '../src/parts/gamepage/Gamepage';
+// import PageNotFound from '../src/parts/PageNotFound';
+import ScrollToTop from '../src/parts/other/ScrolltoTop';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
