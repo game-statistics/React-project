@@ -6,7 +6,7 @@ import Home from './parts/homepage/Home';
 // import PageAbout from './parts/PageAbout';
 import Allgames from './parts/allgamespage/Allgames';
 import Gamepage from './parts/gamepage/Gamepage';
-import PageNotFound from './parts/PageNotFound';
+// import PageNotFound from './parts/PageNotFound';
 import ScrollToTop from './parts/other/ScrolltoTop';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ function App() {
         <Route path='/games' exact component={Allgames} />
         {/* <Route path='/about' exact component={PageAbout} /> */}
         <Route path='/games/:id' exact component={Gamepage} />
-        <Route path='/' component={PageNotFound} />
+        {/* <Route path='/' component={PageNotFound} /> */}
       </Switch>
       <Footer />
     </Router>
