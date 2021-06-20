@@ -4,9 +4,9 @@ import struc from "../Animation/Structure-screenshot.json";
 import nadya from "../Animation/Nadya.json";
 import vova from "../Animation/Vova.json";
 
-function About() {
+function PageAbout() {
   return (
-    <main className="about">
+    <main className="PageAbout">
       <h1 className="Montserrat">О проекте Game Statistics</h1>
 
       <LottieAnimation
@@ -55,4 +55,4 @@ function About() {
   );
 }
 
-export default About;
+export default PageAbout;

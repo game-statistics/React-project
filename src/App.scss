@@ -369,7 +369,7 @@ main {
 //   min-height: 444px;
 // }
 
-.about {
+.PageAbout {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -421,7 +421,7 @@ main {
 }
 
 @media (min-width: 1024px) {
-  .about {
+  .PageAbout {
     display: flex;
     flex-direction: column;
     align-items: center;
