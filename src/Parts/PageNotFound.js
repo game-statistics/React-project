@@ -1,6 +1,6 @@
 import React from "react";
 import LottieAnimation from "./other/Lottie.js";
-import ducks from "../Animation/duck.json";
+import ducks from "../animation/duck.json";
 
 function PageNotFound() {
   return (
