@@ -3,7 +3,9 @@ import parse from "html-react-parser";
 
 function Meta(param) {
   const item = param.item;
-  if (item.metacritic_score !== null) {
+  if (item.metacritic_score === null || item.metacritic_score === undefined) {
+    return <div />;
+  } else {
     if (item.metacritic_score < 50) {
       return (
         <a
@@ -77,8 +79,6 @@ function Meta(param) {
         </a>
       );
     }
-  } else {
-    return <div />;
   }
 }
 
@@ -93,7 +93,7 @@ function IsFree(param) {
 
 function RequiredAge(param) {
   const item = param.item;
-  if (item.required_age === null) {
+  if (item.required_age === null || item.required_age === undefined) {
     return <div />;
   } else {
     return (
@@ -107,7 +107,10 @@ function RequiredAge(param) {
 
 function SteamScore(param) {
   const item = param.item;
-  if (item.steamscore_quantity === null) {
+  if (
+    item.steamscore_quantity === null ||
+    item.steamscore_quantity === undefined
+  ) {
     return <div />;
   } else {
     return (
@@ -120,6 +123,25 @@ function SteamScore(param) {
         <div className="row">
           <div className="subtitle">REVIEWS:</div>
           <div>{item.steamscore_quantity}</div>
+        </div>
+      </div>
+    );
+  }
+}
+
+function Date(param) {
+  const item = param.item;
+  if (item.date === null || item.date === undefined) {
+    return <div />;
+  } else {
+    //   const date = item.date.slice(8, 10)+item.date.slice(5, 7)+item.date.slice(0, 4);
+    return (
+      <div className="row">
+        <div className="subtitle">RELEASE DATE:</div>
+        <div>
+          {item.date.slice(8, 10)}.{item.date.slice(5, 7)}.
+          {item.date.slice(0, 4)}
+          {/* {item.date} */}
         </div>
       </div>
     );
@@ -195,6 +217,9 @@ function Gamepage({ match }) {
 
             <div className="details">
               <RequiredAge item={item} />
+
+              <Date item={item} />
+
               <div className="row">
                 <div className="subtitle">DEVELOPER:</div>
                 <div>{item.developers}</div>

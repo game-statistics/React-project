@@ -1,22 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Gamedetails from "../../json/gamedetail.json";
 
 function GameList(props) {
+  useEffect(() => {
+    fetchItems();
+  }, []);
 
-  function Developers(mass) {
-    const devels = mass.developers;
-    if (devels.length > 1) {
-      return <h5>{devels[0]} ...</h5>;
-    } else {
-      return <h5>{devels[0]}</h5>;
-    }
-  }
+  const [items, setItems] = useState([]);
+  const fetchItems = async () => {
+    const data = await fetch(
+      "https://game-statistic-sv.herokuapp.com/api/Games",
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+    const items = await data.json();
+    setItems(items);
+  };
 
   return (
     <>
-      {Gamedetails.map((item) => (
-        <Link to={`/games/${item.game_id}`} key={item.game_id} className={`game`}>
+      {items.map((item) => (
+        <Link
+          to={`/games/${item.game_id}`}
+          key={item.game_id}
+          className={`game`}
+        >
           <span className="image">
             <img
               src={`https://cdn.cloudflare.steamstatic.com/steam/apps/${item.game_id}/header.jpg`}
@@ -25,7 +37,7 @@ function GameList(props) {
           </span>
           <span>
             <h4>{item.name}</h4>
-            <Developers developers={item.developers} />
+            <h5>{item.developers}</h5>
           </span>
         </Link>
       ))}
