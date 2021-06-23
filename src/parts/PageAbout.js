@@ -8,15 +8,6 @@ function PageAbout() {
   return (
     <main className="PageAbout">
       <h1>О проекте Game Statistics</h1>
-
-      <LottieAnimation
-        lotti={struc}
-        classname={"StructureScreenshot"}
-        height={360}
-        width={360}
-        loop={true}
-      />
-
       <p>Этот сайт разработанный как дипломный проект в 2021 году.</p>
       <p>Идея сайта — Надежда Швец. <br/>
       Поддержал инициативу я — Владимир Ярошенко.</p>
@@ -25,7 +16,7 @@ function PageAbout() {
         <LottieAnimation
           lotti={vova}
           classname={"vova"}
-          height={360}
+          height={270}
           width={360}
           loop={true}
         />
@@ -36,7 +27,7 @@ function PageAbout() {
         <LottieAnimation
           lotti={nadya}
           classname={"nadya"}
-          height={360}
+          height={270}
           width={360}
           loop={true}
         />

@@ -7,10 +7,10 @@ function PageNotFound() {
     <main className="PageNotFound">
       <LottieAnimation
         lotti={ducks}
-        classname={"pageNotFound"}
-        height={360}
+        classname={"ManNotFound"}
+        height={270}
         width={360}
-        loop={false}
+        loop={true}
       />
     </main>
   );
