@@ -162,6 +162,12 @@ main {
   padding-top: 56px;
 }
 
+.allgames {
+    margin: 0 16px;
+    max-width: 330px;
+    min-height: 100vh;
+}
+
 .homepage {
   min-height: 100vh;
   margin: 0 16px;
@@ -203,7 +209,7 @@ main {
     hr {
       border: 0;
       height: 1px;
-      background-color: #BEE7FF;
+      background-color: #bee7ff;
       margin: 0 0 8px 0;
       position: relative;
       left: -11px;
@@ -595,7 +601,7 @@ main {
       margin-right: 24px;
     }
     .description {
-      min-width: 312px;
+      width: 600px;
     }
     .sticky {
       position: sticky;
