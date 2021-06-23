@@ -1,5 +1,4 @@
 import React from "react";
-import GameList from "../requests/Gamelist";
 import GameByScore from "../requests/GameByScore";
 import GameByDate from "../requests/GameByDate";
 

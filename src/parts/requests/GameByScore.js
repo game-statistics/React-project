@@ -27,7 +27,7 @@ function GameByScore(props) {
   function Developers(mass) {
     let devels = mass.developers
     if (devels === null) {
-        return <h5></h5>;
+        return <div />;
     }
     else {
         // devels = devels.slice(2);
