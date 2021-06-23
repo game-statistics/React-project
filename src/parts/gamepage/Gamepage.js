@@ -2,7 +2,7 @@ import React from "react";
 // import { Link } from 'react-router-dom';
 
 function GameName() {
-  return <div className="gameName Montserrat">Game Name</div>;
+  return <div className="gameName">Game Name</div>;
 }
 
 function GameLogo(params) {

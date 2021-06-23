@@ -66,10 +66,6 @@ html {
   min-height: 100vh;
 }
 
-// .Montserrat {
-//   font-family: 'Montserrat', sans-serif;
-// }
-
 header {
   padding: 0 16px;
   height: 60px;
@@ -168,19 +164,22 @@ main {
 .homepage {
   margin: 0 16px;
 
-  h2 {
-    margin: $margin-down;
-  }
   .boxes {
     display: flex;
     flex-direction: column;
   }
+  .sticky {
+    position: sticky;
+    top: 60px;
+  }
 }
 
 .gamepage {
-  margin: 0 16px;
   display: flex;
   flex-direction: column;
+
+  min-height: 100vh;
+  margin: 0 16px;
 
   .highlights {
     display: flex;
@@ -302,13 +301,22 @@ main {
     letter-spacing: 0px;
   }
 }
-
+.header-games {
+    padding: 10px;
+    background-color: $white;
+    border: 1px solid  $white;
+}
+.footer-games {
+    height: 51px;
+    background-color: $white;
+    border: 1px solid  $white;
+    border-radius: $border-radius;
+}
 .game {
   display: flex;
   flex-direction: row;
 
   padding: 10px;
-  margin-bottom: 24px;
 
   text-align: left;
 
@@ -323,6 +331,9 @@ main {
   &:hover {
     background-color: $blue02;
     transition: background-color $animation;
+  }
+  & + .game {
+      margin:  24px 0 0 0;
   }
   img {
     border-radius: $border-radius-img;
@@ -365,17 +376,12 @@ main {
   }
 }
 
-// .PageNotFound {
-//   min-height: 444px;
-// }
-
 .PageAbout {
   display: flex;
   flex-direction: column;
   align-items: center;
 
   margin: 0 16px;
-//   text-align: left;
 
   p {
     text-align: left;
@@ -393,17 +399,6 @@ main {
 
     text-align: center;
   }
-
-  //   .left, .right {
-  //       align-items: center;
-  //   }
-  // margin: $margin-down;
-  //   .vova + h2 {
-  //     margin: 0 0 0 24px;
-  //   }
-  //   .nadya + h2 {
-  //     margin: 0 24px 0 0;
-  //   }
 }
 
 @media (min-width: 720px) {
@@ -462,21 +457,23 @@ main {
     }
   }
 
-  //   .gamepage {
-  //     display: flex;
-  //     flex-direction: row;
+    .gamepage {
+      display: flex;
+      flex-direction: row;
 
-  //     .highlights {
-  //       display: flex;
-  //       flex-direction: column;
-  //       align-items: center;
+      .highlights {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-  //       margin-right: 24px;
-  //     }
-
-  //     .sticky {
-  //       position: sticky;
-  //       top: 116px;
-  //     }
-  //   }
+        margin-right: 24px;
+      }
+      .description {
+        min-width: 312px;
+      }
+      .sticky {
+        position: sticky;
+        top: 116px;
+      }
+    }
 }

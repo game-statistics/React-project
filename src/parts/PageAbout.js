@@ -7,7 +7,7 @@ import vova from "../animation/Vova.json";
 function PageAbout() {
   return (
     <main className="PageAbout">
-      <h1 className="Montserrat">О проекте Game Statistics</h1>
+      <h1>О проекте Game Statistics</h1>
 
       <LottieAnimation
         lotti={struc}

@@ -9,15 +9,15 @@ function Footer() {
       </section>
       <section>
         <div className="colum">
-          <Link to="/" className="Montserrat">
+          <Link to="/">
             Home page
           </Link>
-          <Link to="/games" className="Montserrat">
+          <Link to="/games">
             All games
           </Link>
         </div>
         <div className="colum">
-          <Link to="/about" className="Montserrat">
+          <Link to="/about">
             About
           </Link>
         </div>

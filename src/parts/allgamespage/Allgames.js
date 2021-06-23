@@ -1,15 +1,13 @@
-import React from 'react';
-import GameList from '../other/Gamelist.js';
+import React from "react";
+import GameList from "../requests/Gamelist";
 
 function Allgames() {
-
   return (
     <main>
-      <section className='games-column'>
-        <GameList/>
+      <section className="games-column">
+        <GameList />
       </section>
-      <section>
-      </section>
+      <section></section>
     </main>
   );
 }
