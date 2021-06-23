@@ -1,6 +1,5 @@
 import React from "react";
 import LottieAnimation from "./other/Lottie.js";
-import struc from "../animation/Structure-screenshot.json";
 import nadya from "../animation/Nadya.json";
 import vova from "../animation/Vova.json";
 

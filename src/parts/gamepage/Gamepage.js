@@ -93,7 +93,6 @@ function IsFree(param) {
 
 function RequiredAge(param) {
   const item = param.item;
-  console.log(item);
   if (item.required_age === null) {
     return <div />;
   } else {
@@ -104,6 +103,56 @@ function RequiredAge(param) {
       </div>
     );
   }
+}
+
+function SteamScore(param) {
+  const item = param.item;
+  if (item.steamscore_quantity === null) {
+    return <div />;
+  } else {
+    return (
+      <div className="steam-score">
+        <div className="score">{item.steamscore_description}</div>
+        <div className="row">
+          <div className="subtitle">STEAM SCORE:</div>
+          <div>{item.steamscore_percent}%</div>
+        </div>
+        <div className="row">
+          <div className="subtitle">REVIEWS:</div>
+          <div>{item.steamscore_quantity}</div>
+        </div>
+      </div>
+    );
+  }
+}
+
+function GameGenre(params) {
+  const match = params.match;
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
+  const [items, setItems] = useState([]);
+  const fetchItems = async () => {
+    const data = await fetch(
+      `https://game-statistic-sv.herokuapp.com/api/GenreByGameId/${match.params.id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+    const items = await data.json();
+    setItems(items);
+  };
+  return (
+    <>
+      {items.map((item) => (
+        <div>{item.genre_name}</div>
+      ))}
+    </>
+  );
 }
 
 function Gamepage({ match }) {
@@ -142,17 +191,7 @@ function Gamepage({ match }) {
 
             <Meta item={item} />
 
-            <div className="steam-score">
-              <div className="score">{item.steamscore_description}</div>
-              <div className="row">
-                <div className="subtitle">STEAM SCORE:</div>
-                <div>{item.steamscore_percent}%</div>
-              </div>
-              <div className="row">
-                <div className="subtitle">REVIEWS:</div>
-                <div>{item.steamscore_quantity}</div>
-              </div>
-            </div>
+            <SteamScore item={item} />
 
             <div className="details">
               <RequiredAge item={item} />
@@ -163,7 +202,9 @@ function Gamepage({ match }) {
 
               <div className="row">
                 <div className="subtitle">GENRE:</div>
-                <div>Gemre</div>
+                <div>
+                  <GameGenre match={match} />
+                </div>
               </div>
 
               <div className="row">

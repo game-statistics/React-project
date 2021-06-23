@@ -20,19 +20,15 @@ function GameByDate(props) {
     );
 
     const items = await data.json();
-    console.log(items);
     setItems(items);
   };
 
   function Developers(mass) {
-    let devels = mass.developers
+    let devels = mass.developers;
     if (devels === null) {
-        return <div />;
-    }
-    else {
-        // devels = devels.slice(2);
-        // devels = devels.substring(0, devels.length - 2);
-        return <h5>{devels}</h5>;
+      return <div />;
+    } else {
+      return <h5>{devels}</h5>;
     }
   }
 

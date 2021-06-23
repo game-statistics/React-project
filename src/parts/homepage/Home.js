@@ -1,6 +1,7 @@
 import React from "react";
 import GameByScore from "../requests/GameByScore";
 import GameByDate from "../requests/GameByDate";
+import GameComingSoon from "../requests/GameComingSoon";
 
 function Home() {
   return (
@@ -29,6 +30,16 @@ function Home() {
             </section>
             <div className="footer-games sticky" />
           </div>
+        </section>
+
+        <section className="box">
+            <div className="header-games sticky">
+              <h2>Coming soon</h2>
+            </div>
+            <section className="games-coming-soon">
+              <GameComingSoon />
+            </section>
+            <div className="footer-games sticky" />
         </section>
       </section>
     </main>
