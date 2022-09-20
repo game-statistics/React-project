@@ -171,7 +171,7 @@ function GameGenre(params) {
   return (
     <>
       {items.map((item) => (
-        <div>{item.genre_name}</div>
+        <div key={item.genre_name}>{item.genre_name}</div>
       ))}
     </>
   );
@@ -180,7 +180,7 @@ function GameGenre(params) {
 function Gamepage({ match }) {
   useEffect(() => {
     fetchItem();
-  });
+  }, []);
 
   const [item, setItem] = useState({});
   const fetchItem = async () => {
